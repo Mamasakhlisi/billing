@@ -1,6 +1,6 @@
 {
   "name": "billing",
-  "homepage": "https://github.com/mamasakhlisi/billing",
+  "homepage": "https://mamasakhlisi.github.io/billing",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,10 +19,10 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "start": "craco start",
+    "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
