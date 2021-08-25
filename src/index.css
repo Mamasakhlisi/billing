@@ -1,13 +1,34 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+/* font-family: 'BOG 2017 Headline'; */
+/* font-family: 'BOG 2018' */
+@font-face {
+  font-family: "BOG 2017 Headline";
+  src: url("./assets/fonts/BOG2017Headline-SemiBold.eot");
+  src: url("./assets/fonts/BOG2017Headline-SemiBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("./assets/fonts/BOG2017Headline-SemiBold.woff2") format("woff2"),
+    url("./assets/fonts/BOG2017Headline-SemiBold.woff") format("woff"),
+    url("./assets/fonts/BOG2017Headline-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "BOG 2018";
+  src: url("./assets/fonts/BOG2018-Medium.eot");
+  src: url("./assets/fonts/BOG2018-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("./assets/fonts/BOG2018-Medium.woff2") format("woff2"),
+    url("./assets/fonts/BOG2018-Medium.woff") format("woff"),
+    url("./assets/fonts/BOG2018-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  background-color: #F8F8FC;
 }
