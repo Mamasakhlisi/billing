@@ -45,6 +45,9 @@ export const StyledLinesShape = styled.div`
     position: absolute;
     top:6px;
     right:6px;
+    @media (max-width:1350px) {
+        display: none;
+    }
     img {
         width:450px;
         opacity: 0.4;

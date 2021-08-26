@@ -7,6 +7,14 @@ export const StyledContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap:wrap;
+  @media (max-width:916px) {
+    width:700px;
+    justify-content: space-around;
+  }
+  @media (max-width:637px) {
+    justify-content: center;
+  }
 `;
 
 export const StyledSectionTitle = styled.h3`
@@ -15,6 +23,9 @@ export const StyledSectionTitle = styled.h3`
   font-family: "BOG 2017 Headline";
   margin-bottom: 30px;
   color: #7279ff;
+  @media (max-width:637px) {
+    font-size: 30px;
+  }
 `;
 
 export const StyledPacket = styled.div`
@@ -27,6 +38,12 @@ export const StyledPacket = styled.div`
   padding: 25px;
   border-radius: 16px;
   transition: 300ms;
+  @media (max-width:916px) {
+    margin-top: 20px;
+  }
+  @media (max-width:637px) {
+    margin-top: 20px;
+  }
   &:nth-child(2) {
     background: #7279ff;
     .logo {
