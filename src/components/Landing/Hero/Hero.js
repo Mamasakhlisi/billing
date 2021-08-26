@@ -13,7 +13,7 @@ const Hero = () => {
         <button>დაჯავშნე მომხმარებელი</button>
       </div>
       <StyledLinesShape>
-        <img src={lines} />
+        <img src={lines} alt="img" />
       </StyledLinesShape>
     </StyledContainer>
   );
