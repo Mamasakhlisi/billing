@@ -4,6 +4,8 @@
 }
 /* font-family: 'BOG 2017 Headline'; */
 /* font-family: 'BOG 2018' */
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+
 @font-face {
   font-family: "BOG 2017 Headline";
   src: url("./assets/fonts/BOG2017Headline-SemiBold.eot");
@@ -37,3 +39,48 @@ li {
 
 }
 
+/*Checkbox*/
+.ant-checkbox-wrapper {
+  font-family: "BOG 2018";
+  font-size:12px !important;
+}
+
+/*Form label error*/
+.ant-form-item-explain-error {
+  font-family: "BOG 2018";
+  font-size:12px !important;
+}
+/*Form label*/
+.ant-form-item-required {
+  font-family: "BOG 2018";
+  font-size:12px !important;
+}
+/* Drawer */
+.ant-drawer-title {
+  font-family: "BOG 2017 Headline";
+  font-size:12px !important;
+}
+
+
+
+.input_password{
+  padding:5px !important;
+  border-radius: 4px;
+  border:2px solid #7279ff;
+  font-family: "BOG 2018";
+  font-size:12px !important;
+}
+.input{
+  padding:5px !important;
+  border-radius: 4px;
+  border:2px solid #7279ff;
+  font-family: "BOG 2018";
+  font-size:12px !important;
+  padding-left: 10px !important;
+}
+
+.steps-action {
+  display: flex !important;
+  justify-content: space-between !important;
+  margin-top:25px;
+}

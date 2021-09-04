@@ -1,23 +1,42 @@
 import React, { useState } from "react";
+// packages
 import { Link } from "react-router-dom";
+
+// components
+import Auth from '@CLanding/Auth/Auth'
+
+// styles
 import {
   StyledNavigation,
   StyledLogo,
   StyledSignInButton,
   StyledBurger,
   StyledDropdownMenu,
+  StyledSignUpButton
 } from "./style";
 
 import imageHero from "@Assets/png/lines.png";
 const Navigation = () => {
+  const [visibleAuth, setVisibleAuth] = useState(false);
+  const [authType, setAuthType] = useState(null);
+
   const [toggle, setToggle] = useState(false);
 
   const activeNavigationHandler = () => {
     setToggle(!toggle);
   };
 
+  const setVisibleAuthHandler = (type) => {
+    setVisibleAuth(true)
+    setAuthType(type)
+  }
+  const onClose = () => {
+    setVisibleAuth(false);
+  };
+
   return (
     <>
+    <Auth visibleAuth={visibleAuth} onClose={onClose} authType={authType}/>
       <StyledNavigation>
         <StyledLogo>
           <span>B</span>
@@ -50,7 +69,13 @@ const Navigation = () => {
             </StyledBurger>
           </li>
           <li>
-            <StyledSignInButton>
+            {" "}
+            <StyledSignUpButton onClick={() => setVisibleAuthHandler(1)}>
+              რეგისტრაცია
+            </StyledSignUpButton>
+          </li>
+          <li>
+            <StyledSignInButton onClick={() => setVisibleAuthHandler(0)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16.223"
@@ -68,6 +93,7 @@ const Navigation = () => {
               შესვლა
             </StyledSignInButton>
           </li>
+ 
         </ul>
       </StyledNavigation>
       <StyledDropdownMenu toggle={toggle} className="toggle_menu">
@@ -121,6 +147,7 @@ const Navigation = () => {
               შესვლა
             </StyledSignInButton>
           </li>
+
         </ul>
       </StyledDropdownMenu>
     </>

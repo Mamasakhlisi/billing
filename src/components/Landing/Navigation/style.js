@@ -28,6 +28,7 @@ export const StyledBurger = styled.button`
 export const StyledSignInButton = styled.button`
   width: 120px;
   height: 35px;
+  line-height: 35px;
   border-radius: 6px;
   background-color: #7279ff;
   border: 1px solid #7279ff;
@@ -59,8 +60,8 @@ export const StyledNavigation = styled.nav`
   left: 0;
   right: 0;
   border-radius: 10px;
+  height:60px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 5px 0px;
-
   @media (max-width: 1350px) {
     width: 950px;
   }
@@ -76,8 +77,8 @@ export const StyledNavigation = styled.nav`
 
   ul {
     display: flex;
-    align-items: center;
-
+    align-items: center !important;
+    padding-top:13px;
     .link {
       @media (max-width: 600px) {
         display: none;
@@ -142,3 +143,24 @@ ul {
     }
   }
 `;
+
+export const StyledSignUpButton = styled.button`
+    width: 120px;
+  height:35px;
+  border-radius: 6px;
+  background-color: #fff;
+  border: 2px solid #7279ff;
+  color: #7279ff;
+  cursor: pointer;
+  font-family: "BOG 2017 Headline";
+  font-size: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms;
+  &:hover {
+    background-color: #7279ff;
+    color:#fff;
+  }
+`
+

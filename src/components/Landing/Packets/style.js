@@ -33,7 +33,7 @@ export const StyledPacket = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  width: 230px;
+  width: 280px;
   background: #f2f8fd;
   padding: 25px;
   border-radius: 16px;
@@ -43,6 +43,9 @@ export const StyledPacket = styled.div`
   }
   @media (max-width:637px) {
     margin-top: 20px;
+  }
+  .check {
+    color:#fff;
   }
   &:nth-child(2) {
     background: #7279ff;
