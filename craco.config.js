@@ -9,6 +9,7 @@ module.exports = {
       '@CDashboard': path.resolve(__dirname, 'src/components/Dashboard'),
       '@PLanding': path.resolve(__dirname, 'src/pages/Landing'),
       '@PDashboard': path.resolve(__dirname, 'src/pages/Dashboard'),
+      '@Redux': path.resolve(__dirname, 'src/redux'),
     }
   },
 };

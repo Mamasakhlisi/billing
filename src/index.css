@@ -33,6 +33,7 @@
 }
 body {
   background-color: #F8F8FC;
+  color:#7279ffb7;
 }
 li {
   list-style: none;
@@ -61,7 +62,10 @@ li {
   font-size:12px !important;
 }
 
-
+.ant-select-item-option-content {
+  font-size: 12px !important;
+  font-family: "BOG 2018";
+}
 
 .input_password{
   padding:5px !important;

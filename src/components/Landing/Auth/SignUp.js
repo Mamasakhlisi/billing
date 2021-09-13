@@ -10,6 +10,7 @@ const SignUp = () => {
   const [current, setCurrent] = useState(0);
   const [errors, setErrors] = useState([]);
   const onFinish = (values) => {
+    console.log(errors)
     console.log("Success:", values);
   };
 

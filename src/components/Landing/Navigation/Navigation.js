@@ -29,6 +29,7 @@ const Navigation = () => {
   const setVisibleAuthHandler = (type) => {
     setVisibleAuth(true)
     setAuthType(type)
+
   }
   const onClose = () => {
     setVisibleAuth(false);
@@ -42,11 +43,14 @@ const Navigation = () => {
           <span>B</span>
         </StyledLogo>
         <ul>
-          <li className="link">
-            <Link to="">პაკეტები</Link>
+        <li className="link">
+            <Link to="dashboard">დეშბორდი</Link>
           </li>
           <li className="link">
-            <Link to="">სიახლეები</Link>
+            <Link to="packets">პაკეტები</Link>
+          </li>
+          <li className="link">
+            <Link to="news">სიახლეები</Link>
           </li>
 
           <li>
@@ -90,7 +94,9 @@ const Navigation = () => {
                   fill="#e5e3f0"
                 />
               </svg>
+            
               შესვლა
+     
             </StyledSignInButton>
           </li>
  
