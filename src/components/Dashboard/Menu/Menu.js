@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Link,useRouteMatch} from 'react-router-dom'
+import { Link, useRouteMatch } from 'react-router-dom'
 import {
   CaretDownOutlined,
   FileProtectOutlined,
@@ -40,22 +40,29 @@ const Menu = ({ activeBar }) => {
       id: 3,
       title: "პარამეტრები",
       dropdown: true,
-      to:"settings",
       icon: <SettingOutlined />,
       dropLink: [
         {
-            id: 4,
-            title: "მომხმარებლები",
-            dropdown: false,
-            icon: <UserOutlined />,
-          },
-          
+          id: 4,
+          title: "მომხმარებლები",
+          to: "users",
+          dropdown: false,
+          icon: <UserOutlined />,
+        },
+        {
+          id: 5,
+          title: "სამართლებრივი ფორმა",
+          to: "users",
+          dropdown: false,
+          icon: <UserOutlined />,
+        },
+
       ],
     },
   ];
 
   const setLinkActiveHandle = (id, type) => {
- 
+
     if (type) {
       setActiveLinkDropdown(id);
 
@@ -65,7 +72,7 @@ const Menu = ({ activeBar }) => {
     }
   };
   const { url, path } = useRouteMatch();
-  console.log(url,path)
+  console.log(url, path)
   return (
     <StyledContainer activeBar={activeBar}>
       <StyledLogoContainer>
@@ -78,36 +85,44 @@ const Menu = ({ activeBar }) => {
       <nav>
         <StyledNavUl>
           {links.map((item) => (
-              <div key={item.id} style={{width:"100%"}}>
-            <StyledLink
-              active={url === `/dashboard/${item.to}`}
-              activeDropdown={activeLinkDropdown}
-              key={item.id}
-              onClick={() => setLinkActiveHandle(item.id, false)}
-            >
-              <Link to={`/dashboard/${item.to}`}>
+            <div key={item.id} style={{ width: "100%" }}>
+              <StyledLink
+                active={url === `/dashboard/${item.to}`}
+                activeDropdown={activeLinkDropdown}
+                key={item.id}
+                onClick={() => setLinkActiveHandle(item.id, false)}
+              >
+               {item.to ? <Link to={`/dashboard/${item.to}`}>
 
-              <span>
-                <label>
-                  <div className="icon">{item.icon}</div> {item.title}
-                </label>{" "}
-                {item.dropdown && <CaretDownOutlined />}
-              </span>
-              </Link>
-            </StyledLink>
-            {item.dropdown && (
+<span>
+  <label>
+    <div className="icon">{item.icon}</div> {item.title}
+  </label>{" "}
+  {item.dropdown && <CaretDownOutlined />}
+</span>
+</Link> : <a>
+
+<span>
+  <label>
+    <div className="icon">{item.icon}</div> {item.title}
+  </label>{" "}
+  {item.dropdown && <CaretDownOutlined />}
+</span>
+</a>}
+              </StyledLink>
+              {item.dropdown && (
                 <StyledDropdownUl active={activeLink === item.id}>
                   {item.dropLink.map((link) => (
                     <StyledDropdownLi
                       key={link.id}
-                      onClick={() =>  setLinkActiveHandle(link.id, true)}
-                        activedropdown={activeLinkDropdown === link.id ? true : false}
+                      onClick={() => setLinkActiveHandle(link.id, true)}
+                      activedropdown={activeLinkDropdown === link.id ? true : false}
                     >
-                      <Link to={`/dashboard/${item.to}`}>
+                      <Link to={`/dashboard/${link.to}`}>
 
-                      <label>
-                        <div className="icon">{link.icon}</div> {link.title}
-                      </label>
+                        <label>
+                          <div className="icon">{link.icon}</div> {link.title}
+                        </label>
                       </Link>
                     </StyledDropdownLi>
                   ))}

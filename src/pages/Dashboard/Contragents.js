@@ -28,7 +28,7 @@ const Contragents = () => {
       <Menu activeBar={activeBar} />
       <div className="content">
         <Header setActiveBarHandle={setActiveBarHandle} />
-        <ContragentsC />
+        <ContragentsC activeBar={activeBar} />
       </div>
     </StyledContainer>
   );

@@ -61,6 +61,11 @@ li {
   font-family: "BOG 2017 Headline";
   font-size:12px !important;
 }
+/* Dropdown items */
+.ant-dropdown-menu-title-content {
+  font-family: "BOG 2018";
+  font-size:12px !important;
+}
 
 .ant-select-item-option-content {
   font-size: 12px !important;
