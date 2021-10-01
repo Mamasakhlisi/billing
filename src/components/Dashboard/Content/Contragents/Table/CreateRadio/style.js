@@ -38,3 +38,21 @@ export const StyledContainer =styled.div`
         }
     }
 `
+
+export const StyledField = styled.div`
+margin-top:40px;
+label {
+    font-family: "BOG 2018" !important;
+    font-size:12px;
+    padding-bottom: 10px;
+}
+    .ant-input {
+        width:200px !important;
+
+    }
+    .ant-btn-dashed {
+        font-family: "BOG 2018" !important;
+    font-size:12px;
+    margin-top:10px;
+    }
+`

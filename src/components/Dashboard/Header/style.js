@@ -8,6 +8,10 @@ export const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  span {
+    margin-right: 15px;
+    color:#282828;
+  }
 `;
 
 export const StyledUl = styled.ul`

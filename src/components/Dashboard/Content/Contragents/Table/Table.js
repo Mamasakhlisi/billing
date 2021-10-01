@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 //packages
-import axios from "axios";
 import {useDispatch} from 'react-redux'
 import { Table, Menu, Dropdown } from "antd";
 import { UnorderedListOutlined } from "@ant-design/icons";
@@ -113,11 +112,6 @@ const columns = [
     }),
   };
 
-  useEffect(() => {
-    axios
-      .get("https://nbg.gov.ge/gw/api/ct/monetarypolicy/currencies/ka/json")
-      .then((res) => console.log(res.data));
-  }, []);
   return (
     <StyledContainer activeBar={activeBar}>
       <Table

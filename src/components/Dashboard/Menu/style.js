@@ -165,6 +165,13 @@ export const StyledDropdownLi = styled.li`
       color:#fff;
 
   };
+  label {
+    transition: 300ms;
+    color:#6e6e6e;
+    &:hover {
+      color:#fff;
+    }
+  }
   ${p => p.activedropdown && `  &::before {
         content:"";
         position: absolute;

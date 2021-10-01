@@ -9,6 +9,7 @@ import Home from '@PLanding/Home'
 import Dashboard from '@PDashboard/Dashboard'
 import DocumentProduction from '@PDashboard/DocumentProduction'
 import Contragents from '@PDashboard/Contragents'
+import LegalForm from '@PDashboard/LegalForm'
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route path="/dashboard/contragents">
             <Contragents />
+          </Route>
+          <Route path="/dashboard/settings/legalform">
+            <LegalForm />
           </Route>
           <Route path="/dashboard">
             <Dashboard />

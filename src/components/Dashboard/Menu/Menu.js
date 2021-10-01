@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useRouteMatch } from 'react-router-dom'
+import { Link, useRouteMatch } from "react-router-dom";
 import {
   CaretDownOutlined,
   FileProtectOutlined,
@@ -15,7 +15,7 @@ import {
   StyledLink,
   StyledDropdownUl,
   StyledPerson,
-  StyledDropdownLi
+  StyledDropdownLi,
 } from "./style";
 
 const Menu = ({ activeBar }) => {
@@ -52,27 +52,24 @@ const Menu = ({ activeBar }) => {
         {
           id: 5,
           title: "სამართლებრივი ფორმა",
-          to: "users",
+          to: "settings/legalform",
           dropdown: false,
           icon: <UserOutlined />,
         },
-
       ],
     },
   ];
 
   const setLinkActiveHandle = (id, type) => {
-
     if (type) {
       setActiveLinkDropdown(id);
-
     } else {
       activeLink !== id && setActiveLink(id);
-      setActiveLinkDropdown(0)
+      setActiveLinkDropdown(0);
     }
   };
   const { url, path } = useRouteMatch();
-  console.log(url, path)
+
   return (
     <StyledContainer activeBar={activeBar}>
       <StyledLogoContainer>
@@ -92,23 +89,25 @@ const Menu = ({ activeBar }) => {
                 key={item.id}
                 onClick={() => setLinkActiveHandle(item.id, false)}
               >
-               {item.to ? <Link to={`/dashboard/${item.to}`}>
-
-<span>
-  <label>
-    <div className="icon">{item.icon}</div> {item.title}
-  </label>{" "}
-  {item.dropdown && <CaretDownOutlined />}
-</span>
-</Link> : <a>
-
-<span>
-  <label>
-    <div className="icon">{item.icon}</div> {item.title}
-  </label>{" "}
-  {item.dropdown && <CaretDownOutlined />}
-</span>
-</a>}
+                {item.to ? (
+                  <Link to={`/dashboard/${item.to}`}>
+                    <span>
+                      <label>
+                        <div className="icon">{item.icon}</div> {item.title}
+                      </label>{" "}
+                      {item.dropdown && <CaretDownOutlined />}
+                    </span>
+                  </Link>
+                ) : (
+                  <a>
+                    <span>
+                      <label>
+                        <div className="icon">{item.icon}</div> {item.title}
+                      </label>{" "}
+                      {item.dropdown && <CaretDownOutlined />}
+                    </span>
+                  </a>
+                )}
               </StyledLink>
               {item.dropdown && (
                 <StyledDropdownUl active={activeLink === item.id}>
@@ -116,10 +115,11 @@ const Menu = ({ activeBar }) => {
                     <StyledDropdownLi
                       key={link.id}
                       onClick={() => setLinkActiveHandle(link.id, true)}
-                      activedropdown={activeLinkDropdown === link.id ? true : false}
+                      activedropdown={
+                        activeLinkDropdown === link.id ? true : false
+                      }
                     >
                       <Link to={`/dashboard/${link.to}`}>
-
                         <label>
                           <div className="icon">{link.icon}</div> {link.title}
                         </label>

@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { Drawer, Radio } from "antd";
 import LegalForm from './CreateRadio/LegalForm'
 import Phy from './CreateRadio/Phy'
+import DynamicFields from './CreateRadio/DynamicFields'
 import { StyledRadioContainer } from "./style";
 
 const Create = ({ onClose, visible }) => {
@@ -25,6 +26,7 @@ const Create = ({ onClose, visible }) => {
         </Radio.Group>
       </StyledRadioContainer>
       {radio === "a" ? <LegalForm /> : <Phy />}
+      <DynamicFields />
     </Drawer>
   );
 };
