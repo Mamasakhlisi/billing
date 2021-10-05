@@ -10,6 +10,9 @@ import Dashboard from '@PDashboard/Dashboard'
 import DocumentProduction from '@PDashboard/DocumentProduction'
 import Contragents from '@PDashboard/Contragents'
 import LegalForm from '@PDashboard/LegalForm'
+import Groups from '@PDashboard/Groups'
+import Bank from "@PDashboard/Bank";
+import Registry from "@PDashboard/Registry";
 
 function App() {
   return (
@@ -24,6 +27,15 @@ function App() {
           </Route>
           <Route path="/dashboard/settings/legalform">
             <LegalForm />
+          </Route>
+          <Route path="/dashboard/settings/bank">
+            <Bank />
+          </Route>
+          <Route path="/dashboard/settings/users/registry">
+            <Registry />
+          </Route>
+          <Route path="/dashboard/settings/users/groups">
+            <Groups />
           </Route>
           <Route path="/dashboard">
             <Dashboard />

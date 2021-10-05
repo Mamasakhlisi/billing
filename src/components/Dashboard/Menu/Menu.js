@@ -6,6 +6,10 @@ import {
   SolutionOutlined,
   SettingOutlined,
   UserOutlined,
+  UsergroupAddOutlined,
+  FileTextOutlined,
+
+  BankOutlined
 } from "@ant-design/icons";
 import {
   StyledContainer,
@@ -21,6 +25,11 @@ import {
 const Menu = ({ activeBar }) => {
   const [activeLink, setActiveLink] = useState(0);
   const [activeLinkDropdown, setActiveLinkDropdown] = useState(0);
+  const [activeSetting, setActiveSetting] = useState(false);
+  // მომხმარებლის დროპდაუნ ჩეინჯერი
+  const handlerSetting = () => {
+    setActiveSetting(!activeSetting);
+  };
   const links = [
     {
       id: 1,
@@ -45,16 +54,39 @@ const Menu = ({ activeBar }) => {
         {
           id: 4,
           title: "მომხმარებლები",
-          to: "users",
-          dropdown: false,
+          dropdown: true,
+          to: false,
           icon: <UserOutlined />,
+          dropLink: [
+            {
+              id: 7,
+              title: "რეესტრი",
+              dropdown: false,
+              to: "settings/users/registry",
+              icon: <FileTextOutlined />,
+            },
+            {
+              id: 8,
+              title: "ჯგუფები",
+              dropdown: false,
+              to: "settings/users/groups",
+              icon: <UsergroupAddOutlined />,
+            },
+          ],
         },
         {
           id: 5,
           title: "სამართლებრივი ფორმა",
           to: "settings/legalform",
           dropdown: false,
-          icon: <UserOutlined />,
+          icon: <FileProtectOutlined />,
+        },
+        {
+          id: 6,
+          title: "ბანკები",
+          to: "settings/bank",
+          dropdown: false,
+          icon: <BankOutlined />,
         },
       ],
     },
@@ -67,6 +99,7 @@ const Menu = ({ activeBar }) => {
       activeLink !== id && setActiveLink(id);
       setActiveLinkDropdown(0);
     }
+    console.log(id, type);
   };
   const { url, path } = useRouteMatch();
 
@@ -99,7 +132,7 @@ const Menu = ({ activeBar }) => {
                     </span>
                   </Link>
                 ) : (
-                  <a>
+                  <a onClick={handlerSetting}>
                     <span>
                       <label>
                         <div className="icon">{item.icon}</div> {item.title}
@@ -109,22 +142,73 @@ const Menu = ({ activeBar }) => {
                   </a>
                 )}
               </StyledLink>
+                  {/** დროპდაუნი */}
               {item.dropdown && (
-                <StyledDropdownUl active={activeLink === item.id}>
+                <StyledDropdownUl active={activeSetting}>
                   {item.dropLink.map((link) => (
-                    <StyledDropdownLi
-                      key={link.id}
-                      onClick={() => setLinkActiveHandle(link.id, true)}
-                      activedropdown={
-                        activeLinkDropdown === link.id ? true : false
-                      }
-                    >
-                      <Link to={`/dashboard/${link.to}`}>
-                        <label>
-                          <div className="icon">{link.icon}</div> {link.title}
-                        </label>
-                      </Link>
-                    </StyledDropdownLi>
+                    <>
+                      <StyledDropdownLi
+                        key={link.id}
+                        onClick={() => setLinkActiveHandle(link.id, true)}
+                        activedropdown={
+                          activeLinkDropdown === link.id ? true : false
+                        }
+                        subDrop={false}
+                      >
+                        {link.to ? (
+                          <>
+                            <Link to={`/dashboard/${link.to}`}>
+                              <span>
+                                <label>
+                                  <div className="icon">{link.icon}</div>{" "}
+                                  {link.title}
+                                </label>{" "}
+                                {link.dropdown && <CaretDownOutlined />}
+                              </span>
+                            </Link>
+                          </>
+                        ) : (
+                          <>
+                            <a
+                              onClick={() =>
+                                setLinkActiveHandle(link.id, false)
+                              }
+                            >
+                              <span>
+                                <label>
+                                  <div className="icon">{link.icon}</div>{" "}
+                                  {link.title}
+                                </label>{" "}
+                                {link.dropdown && <CaretDownOutlined />}
+                              </span>
+                            </a>
+                          </>
+                        )}
+                      </StyledDropdownLi>
+                      {/** დროპდაუნის საბ დროპდაუნი */}
+                      <StyledDropdownUl active={activeLink === link.id}>
+                        {link.dropLink?.map((l) => (
+                          <StyledDropdownLi
+                            key={l.id}
+                            onClick={() => setLinkActiveHandle(l.id, true)}
+                            activedropdown={
+                              activeLinkDropdown === l.id ? true : false
+                            }
+                            subDrop={true}
+                          >
+                                        <Link to={`/dashboard/${l.to}`}>
+                              <span>
+                                <label>
+                                  <div className="icon">{l.icon}</div>{" "}
+                                  {l.title}
+                                </label>{" "}
+                                {l.dropdown && <CaretDownOutlined />}
+                              </span>
+                            </Link>
+                          </StyledDropdownLi>
+                        ))}
+                      </StyledDropdownUl>
+                    </>
                   ))}
                 </StyledDropdownUl>
               )}

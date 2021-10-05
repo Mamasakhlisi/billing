@@ -41,6 +41,10 @@ export const StyledContainer =styled.div`
 
 export const StyledField = styled.div`
 margin-top:40px;
+.ant-space {
+    border-bottom: 2px solid #ccc;
+    margin-top:15px;
+}
 label {
     font-family: "BOG 2018" !important;
     font-size:12px;
@@ -48,7 +52,13 @@ label {
 }
     .ant-input {
         width:200px !important;
-
+        font-family: "BOG 2018" !important;
+        font-size:12px;
+    }
+    .ant-form-item-control-input-content {
+        textarea {
+            width:410px !important;
+        }
     }
     .ant-btn-dashed {
         font-family: "BOG 2018" !important;

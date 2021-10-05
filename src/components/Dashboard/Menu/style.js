@@ -155,16 +155,26 @@ export const StyledDropdownLi = styled.li`
     font-family: "BOG 2017 Headline";
     font-size: 11px;
     background: #fafafa;
-    height:40px;
     line-height: 40px;
-    padding-left: 20px;
+    padding-left: ${p => p.subDrop ? "40px" : "20px"};
     padding-right: 20px;
     position: relative;
     &:hover {
       background: #7279ff;
       color:#fff;
+      span {
+        color:#fff;
+      }
+      label {
+        color:#fff;
+      }
 
   };
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   label {
     transition: 300ms;
     color:#6e6e6e;

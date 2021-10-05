@@ -138,6 +138,16 @@ const Phy = () => {
           </Select>
         </div>
         <div className="form_group">
+        <label>IBAN</label>
+          <Input placeholder="IBAN" disabled />
+        </div>
+        <div className="form_group">
+        <label>ბანკის კოდი</label>
+          <Input placeholder="ბანკის კოდი" disabled />
+        </div>
+        
+        <div className="form_group">
+          
         <label>ანგარიშის ნომერი</label>
           <Input placeholder="ანგარიშის ნომერი" />
         </div>

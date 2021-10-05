@@ -55,18 +55,20 @@ export const StyledFormItem = styled.div`
   font-family: "BOG 2018";
   padding: 5px;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   flex-direction: column;
   border-radius: 3px;
   position: relative;
   transition: 300ms;
+  text-align: left;
   &:hover {
     background: #fafafa;
   }
   span {
-    font-family: "BOG 2017 Headline";
+    font-family: "BOG 2018";
     font-size: 12px;
+    text-align: left;
   }
   .edit {
     top: -5px;
